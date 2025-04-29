@@ -3,7 +3,7 @@
 "use client";
 
 import { createContext, useContext, useReducer } from "react";
-import { type Booking, type Service } from "@/types";
+import { type Service } from "@/types";
 
 type BookingState = {
   selectedService: Service | null;

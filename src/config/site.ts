@@ -1,5 +1,3 @@
-import { type NavItem } from "@/types";
-
 export const SITE_CONFIG = {
     name: "SharpLook Barber Shop",
     description:

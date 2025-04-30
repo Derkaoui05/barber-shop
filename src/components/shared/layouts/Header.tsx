@@ -18,25 +18,24 @@ export function Header() {
               Sharp<span className="text-primary">Look</span>
             </span>
           </Link>
-          
-          <nav className="hidden md:flex items-center gap-8">
-            {MAIN_NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium transition-colors hover:text-primary relative group"
-              >
-                {item.title}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
-          </nav>
         </div>
+        <nav className="hidden md:flex items-center gap-8">
+          {MAIN_NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium transition-colors hover:text-primary relative group"
+            >
+              {item.title}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            </Link>
+          ))}
+        </nav>
 
         <div className="flex items-center gap-4">
-          <Button 
-            asChild 
-            variant="default" 
+          <Button
+            asChild
+            variant="default"
             size="lg"
             className="hidden md:inline-flex font-semibold tracking-wide px-6 hover:scale-105 transition-transform duration-300"
           >
@@ -56,8 +55,8 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="fixed inset-x-0 top-[5rem] bottom-0 z-50 bg-background/80 backdrop-blur-lg border-t border-border/40 animate-in slide-in-from-top md:hidden">
-          <nav className="container py-6 flex flex-col gap-6">
+        <div className="fixed inset-x-0 top-[5rem] bottom-0 h-full z-50 md:hidden">
+          <nav className="container py-6 flex flex-col gap-6 bg-background/95 backdrop-blur-xl border-t border-border/40 animate-in slide-in-from-top">
             {MOBILE_NAV.map((item) => (
               <Link
                 key={item.href}

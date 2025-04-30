@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
     },
     contact: {
         phone: "+212 674494786",
-        email: "hello@sharplook.example.com",
+        email: "admin@sharplook.com",
         address: "123 Barber Street, Cityville, CV 12345",
         hours: [
             { days: "Mon - Fri", hours: "9:00 AM - 7:00 PM" },
@@ -22,7 +22,7 @@ export const SITE_CONFIG = {
     booking: {
         openingHour: 9,
         closingHour: 19,
-        slotDuration: 30, // minutes
+        slotDuration: 30,
         maxDaysInAdvance: 30,
     },
     seo: {

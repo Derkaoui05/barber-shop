@@ -1,7 +1,7 @@
 // src/app/(main)/layout.tsx
 
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Oswald} from "next/font/google";
 import { SITE_CONFIG } from "@/config/site";
 import { Providers } from "@/providers/Providers";
 import { Header } from "@/components/shared/layouts/Header";
@@ -11,16 +11,12 @@ import { cn } from "@/lib/utils";
 import '@/app/globals.css'
 
 // Font definitions
-const inter = Inter({ 
+const oswald = Oswald({ 
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: "swap",
+  variable: "--font-oswald",
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-});
 
 // Metadata generation
 export const metadata: Metadata = {
@@ -72,15 +68,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased selection:bg-primary/10",
-          inter.variable,
-          playfair.variable
+          "min-h-screen bg-background font-Oswald antialiased selection:bg-primary-foreground/30", oswald.variable
         )}
       >
         <Providers>
           <div className="relative flex min-h-screen flex-col">
             <Header />
-            <main className="flex-1 container py-8 md:py-12">
+            <main className="flex-1">
               {children}
             </main>
             <Footer />

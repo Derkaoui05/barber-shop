@@ -44,6 +44,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+
 :root {
   --radius: 0.5rem;
   --background: oklch(0.141 0.005 285.823);
@@ -120,4 +121,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::-webkit-scrollbar{
+  display: none;
 }

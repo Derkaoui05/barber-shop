@@ -5,13 +5,13 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen font-oswald w-full flex items-center justify-center">
       {/* Background Image with Overlay */}
-      <div
+      <div 
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: "url('/Hero.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: "fixed"
         }}
       >
         <div className="absolute inset-0 bg-black/80" />
@@ -26,10 +26,10 @@ export default function Hero() {
               Welcome to The SharpLook
             </h1>
             <div className="space-y-2">
-              <p className="text-8xl md:text-[150px] text-primary/75">
+              <p className="text-8xl md:text-[150px] text-primary">
                 Expert Grooming.
               </p>
-              <p className="text-8xl md:text-[150px] text-primary/75">
+              <p className="text-8xl md:text-[150px] text-primary">
                 Distinct Style.
               </p>
             </div>
@@ -59,7 +59,7 @@ export default function Hero() {
             {/* Phone */}
             <div className="flex items-center gap-3 text-white/90">
               <Phone className="w-6 h-6 text-primary shrink-0" />
-              <a
+              <a 
                 href={`tel:${SITE_CONFIG.contact.phone}`}
                 className="hover:text-primary transition-colors"
               >
@@ -70,7 +70,7 @@ export default function Hero() {
             {/* Email */}
             <div className="flex items-center gap-3 text-white/90">
               <Mail className="w-6 h-6 text-primary shrink-0" />
-              <a
+              <a 
                 href={`mailto:${SITE_CONFIG.contact.email}`}
                 className="hover:text-primary transition-colors"
               >

@@ -9,7 +9,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
           {/* Content */}
           <div className="flex-1 space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-5xl md:text-6xl  font-bold">
               Molding Style. Shaping Character.
             </h2>
             <p className="text-lg text-muted-foreground">

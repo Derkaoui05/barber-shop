@@ -19,7 +19,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="container relative z-10">
-        <div className="max-w-4xl mx-auto space-y-16">
+        <div className="max-w-6xl mx-auto space-y-16">
           {/* Hero Titles */}
           <div className="space-y-7 text-start">
             <h1 className="text-5xl md:text-6xl text-white">

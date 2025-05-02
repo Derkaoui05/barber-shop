@@ -34,7 +34,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-16">
+    <section className="py-16 font-oswald">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-2">
@@ -80,7 +80,7 @@ export default function Services() {
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover"
+                    className="object-cover "
                   />
                   <div className="absolute bottom-0 left-0 p-8 text-left bg-gradient-to-t from-black via-black/70 to-transparent w-full">
                     <h3 className="text-4xl font-bold mb-2 text-white">{service.title}</h3>

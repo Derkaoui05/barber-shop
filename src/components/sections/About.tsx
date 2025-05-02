@@ -7,7 +7,7 @@ export default function About() {
     <section className="font-oswald w-full py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
-          {/* Content */}
+          
           <div className="flex-1 space-y-6">
             <h2 className="text-5xl md:text-6xl  font-bold">
               Molding Style. Shaping Character.
@@ -26,7 +26,6 @@ export default function About() {
             </Button>
           </div>
 
-          {/* Image */}
           <div className="flex-1 flex justify-center items-center">
             <div className="relative aspect-[4/3] w-full max-w-md mx-auto">
               <div className="absolute inset-0" style={{

@@ -122,6 +122,20 @@
     @apply bg-background text-foreground;
   }
 }
+.services-carousel .carousel .control-dots {
+  display: none;
+}
+
+.services-carousel .carousel.carousel-slider {
+  overflow: visible;
+}
+
+.services-carousel .carousel .slide {
+  background: none;
+}
+
+
+
 
 ::-webkit-scrollbar{
   display: none;

@@ -47,7 +47,7 @@ export default function Services() {
             Meet our Tailored<br />Services for You
           </h1>
           <p className="text-gray-400 text-xl mb-12">
-            From Haircuts to Skin Treatments, We've Got You.
+            From Haircuts to Skin Treatments, We&apos;ve Got You.
           </p>
 
           <div className="relative">

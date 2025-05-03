@@ -44,7 +44,9 @@ export default function Services() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-6xl font-bold mb-4">
-            Meet our Tailored<br />Services for You
+            Meet our Tailored
+            <br />
+            Services for You
           </h1>
           <p className="text-gray-400 text-xl mb-12">
             From Haircuts to Skin Treatments, We&apos;ve Got You.
@@ -63,7 +65,10 @@ export default function Services() {
               className="services-carousel"
             >
               {services.map((service, index) => (
-                <div key={index} className="relative h-[300px] md:h-[600px] group">
+                <div
+                  key={index}
+                  className="relative h-[300px] md:h-[600px] group"
+                >
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -71,18 +76,23 @@ export default function Services() {
                     className="object-cover"
                   />
                   <div className="absolute bottom-0 left-0 p-8 text-left bg-gradient-to-t from-black to-transparent w-full h-1/2">
-                    <h3 className="text-5xl font-bold text-white absolute bottom-8 left-8">{service.title}</h3>
+                    <h3 className="text-5xl font-bold text-white absolute bottom-8 left-8">
+                      {service.title}
+                    </h3>
                   </div>
                 </div>
               ))}
             </Carousel>
-            
-            <div className="flex items-center justify-between mt-8">
+
+            <div className="flex items-center flex-wrap justify-between mt-8">
               <div className="flex items-center gap-8">
                 <div className="flex items-center gap-4">
-                  <button 
+                  <button
                     onClick={() => {
-                      const prevSlide = currentSlide === 0 ? services.length - 1 : currentSlide - 1;
+                      const prevSlide =
+                        currentSlide === 0
+                          ? services.length - 1
+                          : currentSlide - 1;
                       updateCurrentSlide(prevSlide);
                     }}
                     className="cursor-pointer text-white p-3 "
@@ -100,9 +110,12 @@ export default function Services() {
                       />
                     ))}
                   </div>
-                  <button 
+                  <button
                     onClick={() => {
-                      const nextSlide = currentSlide === services.length - 1 ? 0 : currentSlide + 1;
+                      const nextSlide =
+                        currentSlide === services.length - 1
+                          ? 0
+                          : currentSlide + 1;
                       updateCurrentSlide(nextSlide);
                     }}
                     className=" cursor-pointer text-white p-3 "
@@ -111,13 +124,16 @@ export default function Services() {
                   </button>
                 </div>
               </div>
-              <Button 
-                asChild 
-                variant="outline" 
-                size="lg" 
+              <Button
+                asChild
+                variant="outline"
+                size="default"
                 className="text-base uppercase tracking-wider border-white/20 text-white hover:bg-white/10 hover:text-white"
               >
-                <Link href="/services">Browse All Services →</Link>
+                <Link href="/services">
+                  Browse All Services{" "}
+                  <ArrowRight className="align-middle size-4" />
+                </Link>
               </Button>
             </div>
           </div>

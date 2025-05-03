@@ -9,7 +9,7 @@ const SOCIAL_LINKS = [
   { name: "Instagram", href: "https://instagram.com" },
   { name: "Facebook", href: "https://facebook.com" },
   { name: "Tiktok", href: "https://tiktok.com" },
-  { name: "Snap", href: "https://snapchat.com" },
+  { name: "Snapchat", href: "https://snapchat.com" },
   { name: "Youtube", href: "https://youtube.com" },
 ];
 

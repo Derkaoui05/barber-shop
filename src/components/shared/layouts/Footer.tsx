@@ -108,9 +108,10 @@ export function Footer() {
             <Link
               key={social.name}
               href={social.href}
-              className="text-[#B88C46] hover:text-[#B88C46]/80 border border-[#B88C46] px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base"
+              className="text-[#B88C46] hover:text-white border border-[#B88C46] px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base relative overflow-hidden group"
             >
-              {social.name}
+              <span className="relative z-10">{social.name}</span>
+              <span className="absolute inset-0 bg-primary -translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300 ease-in-out origin-bottom-left" />
             </Link>
           ))}
         </div>

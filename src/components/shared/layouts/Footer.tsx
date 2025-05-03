@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FOOTER_NAV } from "@/config/navigation";
-import { SITE_CONFIG } from "@/config/site";
 import Image from "next/image";
 import { Scissors } from "lucide-react";
 

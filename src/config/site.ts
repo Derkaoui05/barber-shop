@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
     contact: {
         phone: "+212 674494786",
         email: "admin@sharplook.com",
-        address: "123 Barber Street, Cityville, CV 12345",
+        address: "Kasbah Street, Tangier, Morocco",
         hours: [
             { days: "Mon - Fri", hours: "9:00 AM - 7:00 PM" },
             { days: "Saturday", hours: "10:00 AM - 5:00 PM" },

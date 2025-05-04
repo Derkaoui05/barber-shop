@@ -1,8 +1,10 @@
 import { Metadata } from "next";
+import { SITE_CONFIG } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Contact Us | SharpLook Barber",
-  description: "Get in touch with SharpLook Barber. Book your appointment or ask any questions about our services.",
+  description:
+    "Get in touch with SharpLook Barber. Book your appointment or ask any questions about our services.",
 };
 
 export default function ContactPage() {
@@ -14,31 +16,37 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                  Get in Touch
+                </h1>
                 <p className="text-muted-foreground text-lg">
-                  Have questions about our services? Ready to book an appointment? 
-                  We're here to help you look your best.
+                  Have questions about our services? Ready to book an
+                  appointment? We&apos;re here to help you look your best.
                 </p>
               </div>
 
               <div className="space-y-4">
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Location</h3>
-                  <p className="text-muted-foreground">123 Barber Street, City, Country</p>
+                  <p className="text-muted-foreground">
+                    {SITE_CONFIG.contact.address}
+                  </p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Hours</h3>
-                  <p className="text-muted-foreground">
-                    Monday - Friday: 9am - 8pm<br />
-                    Saturday: 10am - 6pm<br />
-                    Sunday: Closed
-                  </p>
+                  {SITE_CONFIG.contact.hours.map((schedule) => (
+                    <p key={schedule.days}>
+                      <span className="text-muted-foreground">{schedule.days}:</span>{" "}
+                      {schedule.hours}
+                    </p>
+                  ))}
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Contact</h3>
                   <p className="text-muted-foreground">
-                    Phone: +1 234 567 890<br />
-                    Email: info@sharplock.com
+                    Phone: {SITE_CONFIG.contact.phone}
+                    <br />
+                    Email: {SITE_CONFIG.contact.email}
                   </p>
                 </div>
               </div>
@@ -49,7 +57,10 @@ export default function ContactPage() {
               <form className="space-y-6">
                 <div className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Name
                     </label>
                     <input
@@ -60,7 +71,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Email
                     </label>
                     <input
@@ -71,7 +85,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Message
                     </label>
                     <textarea

@@ -1,6 +1,6 @@
 // Service type
 export type Service = {
-    id: string;
+    id: int;
     name: string;
     description: string;
     duration: number; // in minutes
@@ -24,7 +24,7 @@ export type Service = {
   
   // Testimonial type
   export type Testimonial = {
-    id: string;
+    id: int;
     author: string;
     role?: string;
     content: string;
@@ -34,17 +34,16 @@ export type Service = {
   
   // Barber type
   export type Barber = {
-    id: string;
+    id: int;
     name: string;
-    bio: string;
-    specialty: string;
-    experience: number; // years
+    speciality: string[];
+    description : string;
     image: string;
   };
   
   // Gallery image type
   export type GalleryImage = {
-    id: string;
+    id: int;
     src: string;
     alt: string;
     category: 'haircut' | 'beard' | 'styling' | 'all';

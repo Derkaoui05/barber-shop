@@ -14,7 +14,7 @@ export default function About() {
             </h2>
             <p className="text-lg text-muted-foreground">
               Since 2010, The SharpLook has been the go-to destination for
-              timeless grooming. Rooted in tradition and driven by innovation,
+              timeless grooming. Rooted in tradxition and driven by innovation,
               our expert barbers bring precision and passion to every service.
               Discover our story, our craft, and the values that shape who we
               are.

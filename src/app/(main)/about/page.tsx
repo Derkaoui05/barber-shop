@@ -1,8 +1,21 @@
+"use client"
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { getBarber } from "@/config/barber";
 
 export default function AboutPage() {
+  const [selectedBarber, setSelectedBarber] = useState<number | null>(null);
+  const [displayedImage, setDisplayedImage] = useState(getBarber[0].image);
+
+  const handleBarberClick = (id: number) => {
+    const barber = getBarber.find(b => b.id === id);
+    if (barber) {
+      setDisplayedImage(barber.image);
+      setSelectedBarber(selectedBarber === id ? null : id);
+    }
+  };
+
   return (
     <section className="font-oswald w-full py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-8">
@@ -21,48 +34,44 @@ export default function AboutPage() {
                   className="object-cover rounded-lg"
                 />
               </div>
+              <h2 className="text-6xl md:text-7xl tracking-wide leading-relaxed font-bold"> Built By Amazing Barbers.</h2>
             </div>
             {/* Co-owner section */}
-            <div className="space-y-8 w-full">
+            <div className="space-y-8 mt-20 w-full">
               <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="relative w-full md:w-1/2 aspect-[3/2]">
+                <div className="relative w-full md:w-1/2 aspect-square">
                   <Image
-                    src="/about3.webp"
-                    alt="Co-owner image"
+                    src={displayedImage}
+                    alt="Barbershop team"
                     fill
                     priority
                     className="object-cover rounded-lg"
                   />
                 </div>
                 <div className="w-full md:w-1/2 space-y-6">
-                  <h2 className="text-4xl md:text-5xl tracking-wide leading-tight font-bold">
-                    Built By Amazing Barbers.
-                  </h2>
                   <div className="space-y-4">
-                    <div>
-                      <h3 className="text-2xl font-bold">John</h3>
-                      <ul className="list-disc pl-5 mt-2 space-y-1">
-                        <li>Classic Scissor Haircuts</li>
-                        <li>Beard Specialist</li>
-                      </ul>
-                      <p className="mt-2 text-muted-foreground">
-                        Co-owner of The Razor Brothers, brings over 30 years of
-                        expertise to the shop. Known for his precision and
-                        creativity, John ensures every client leaves looking
-                        their best.
-                      </p>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <h3 className="text-xl font-bold">Mark</h3>
+                    {getBarber.map((barber) => (
+                      <div key={barber.id}>
+                        <button
+                          onClick={() => handleBarberClick(barber.id)}
+                          className="text-5xl md:text-6xl font-bold text-left drop-shadow-lg drop-shadow-primary/60 cursor-pointer w-full hover:text-primary transition-colors"
+                        >
+                          {barber.name}
+                        </button>
+                        {selectedBarber === barber.id && (
+                          <div className="mt-2 pl-7">
+                            <ul className="space-y-1 list-none">
+                              {barber.speciality.map((item, i) => (
+                                <li key={i} className="text-lg">{item}</li>
+                              ))}
+                            </ul>
+                            <p className="mt-2 text-muted-foreground text-lg">
+                              {barber.description}
+                            </p>
+                          </div>
+                        )}
                       </div>
-                      <div>
-                        <h3 className="text-xl font-bold">James</h3>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold">Nicole</h3>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

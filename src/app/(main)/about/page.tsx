@@ -1,19 +1,16 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 import { getBarber } from "@/config/barber";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function AboutPage() {
-  const [selectedBarber, setSelectedBarber] = useState<number | null>(null);
   const [displayedImage, setDisplayedImage] = useState(getBarber[0].image);
-
-  const handleBarberClick = (id: number) => {
-    const barber = getBarber.find(b => b.id === id);
-    if (barber) {
-      setDisplayedImage(barber.image);
-      setSelectedBarber(selectedBarber === id ? null : id);
-    }
-  };
 
   return (
     <section className="font-oswald w-full py-12 md:py-16">
@@ -33,7 +30,9 @@ export default function AboutPage() {
                   className="object-cover rounded-lg"
                 />
               </div>
-              <h2 className="text-6xl md:text-7xl tracking-wide leading-relaxed font-bold"> Built By Amazing Barbers.</h2>
+              <h2 className="text-6xl md:text-7xl tracking-wide leading-relaxed font-bold">
+                Built By Amazing Barbers.
+              </h2>
             </div>
             {/* Co-owner section */}
             <div className="space-y-8 mt-20 w-full">
@@ -48,30 +47,31 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="w-full md:w-1/2 space-y-6">
-                  <div className="space-y-4">
+                  <Accordion type="single" collapsible>
                     {getBarber.map((barber) => (
-                      <div key={barber.id}>
-                        <button
-                          onClick={() => handleBarberClick(barber.id)}
-                          className="text-5xl md:text-6xl font-bold text-left drop-shadow-lg drop-shadow-primary/60 cursor-pointer w-full hover:text-primary transition-colors"
-                        >
+                      <AccordionItem 
+                        key={barber.id} 
+                        value={barber.id.toString()}
+                        onClick={() => setDisplayedImage(barber.image)}
+                      >
+                        <AccordionTrigger className="text-5xl md:text-6xl font-bold text-left drop-shadow-lg drop-shadow-primary/60 hover:text-primary transition-colors">
                           {barber.name}
-                        </button>
-                        {selectedBarber === barber.id && (
-                          <div className="mt-2 pl-7">
-                            <ul className="space-y-1 list-none">
-                              {barber.speciality.map((item, i) => (
-                                <li key={i} className="text-lg">{item}</li>
-                              ))}
-                            </ul>
-                            <p className="mt-2 text-muted-foreground text-lg">
-                              {barber.description}
-                            </p>
-                          </div>
-                        )}
-                      </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="pl-7">
+                          <ul className="space-y-1 list-none">
+                            {barber.speciality.map((item, i) => (
+                              <li key={i} className="text-lg">
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="mt-2 text-muted-foreground text-lg">
+                            {barber.description}
+                          </p>
+                        </AccordionContent>
+                      </AccordionItem>
                     ))}
-                  </div>
+                  </Accordion>
                 </div>
               </div>
             </div>
@@ -81,4 +81,3 @@ export default function AboutPage() {
     </section>
   );
 }
-

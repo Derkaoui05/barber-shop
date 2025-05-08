@@ -6,29 +6,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { SERVICE_CATEGORIES } from "@/config/services";
 
-const services = [
-  {
-    title: "Haircuts",
-    image: "/service1.webp",
-  },
-  {
-    title: "Beard Services",
-    image: "/service2.webp",
-  },
-  {
-    title: "Shaves & Grooming",
-    image: "/service3.webp",
-  },
-  {
-    title: "Facial & Skin",
-    image: "/service4.webp",
-  },
-  {
-    title: "Packages",
-    image: "/service5.webp",
-  },
-];
 
 export default function Services() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -64,20 +43,20 @@ export default function Services() {
               interval={5000}
               className="services-carousel"
             >
-              {services.map((service, index) => (
+              {SERVICE_CATEGORIES.map((service) => (
                 <div
-                  key={index}
+                  key={service.id}
                   className="relative h-[300px] md:h-[600px] group"
                 >
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={service.name}
                     fill
                     className="object-cover"
                   />
                   <div className="absolute bottom-0 left-0 p-8 text-left bg-gradient-to-t from-black to-transparent w-full h-1/2">
                     <h3 className="text-5xl font-bold text-white absolute bottom-8 left-8">
-                      {service.title}
+                      {service.name}
                     </h3>
                   </div>
                 </div>
@@ -91,7 +70,7 @@ export default function Services() {
                     onClick={() => {
                       const prevSlide =
                         currentSlide === 0
-                          ? services.length - 1
+                          ? SERVICE_CATEGORIES.length - 1
                           : currentSlide - 1;
                       updateCurrentSlide(prevSlide);
                     }}
@@ -100,7 +79,7 @@ export default function Services() {
                     <ArrowLeft className="w-6 h-6" />
                   </button>
                   <div className="flex items-center gap-2">
-                    {services.map((_, index) => (
+                    {SERVICE_CATEGORIES.map((_, index) => (
                       <button
                         key={index}
                         onClick={() => updateCurrentSlide(index)}
@@ -113,7 +92,7 @@ export default function Services() {
                   <button
                     onClick={() => {
                       const nextSlide =
-                        currentSlide === services.length - 1
+                        currentSlide === SERVICE_CATEGORIES.length - 1
                           ? 0
                           : currentSlide + 1;
                       updateCurrentSlide(nextSlide);

@@ -1,12 +1,11 @@
 // Service type
 export type Service = {
     id: int;
-    name: string;
+    type: string;
     description: string;
-    duration: number; // in minutes
     price: number;
-    category: 'haircut' | 'beard' | 'package' | 'other';
-    popular?: boolean;
+    category: 'haircuts' | 'Beard Services' | 'Shaves & Gromming' | 'Facial & Skin' | 'Packages';
+    image? : string;
   };
   
   // Booking type

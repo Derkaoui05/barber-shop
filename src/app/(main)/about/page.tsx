@@ -49,19 +49,19 @@ export default function AboutPage() {
                 <div className="w-full md:w-1/2 space-y-6">
                   <Accordion type="single" collapsible>
                     {getBarber.map((barber) => (
-                      <AccordionItem 
-                        key={barber.id} 
+                      <AccordionItem
+                        key={barber.id}
                         value={barber.id.toString()}
                         onClick={() => setDisplayedImage(barber.image)}
                       >
-                        <AccordionTrigger className="text-5xl md:text-6xl font-bold text-left drop-shadow-lg drop-shadow-primary/60 hover:text-primary transition-colors">
+                        <AccordionTrigger className="text-3xl font-bold text-left drop-shadow-lg drop-shadow-primary/60 hover:text-primary transition-colors">
                           {barber.name}
                         </AccordionTrigger>
                         <AccordionContent className="pl-7">
-                          <ul className="space-y-1 list-none">
+                          <ul className="space-y-1 ">
                             {barber.speciality.map((item, i) => (
                               <li key={i} className="text-lg">
-                                {item}
+                                - {item}
                               </li>
                             ))}
                           </ul>

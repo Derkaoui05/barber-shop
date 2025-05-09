@@ -3,13 +3,13 @@
 import { SERVICES } from "@/config/services"
 import type { Service } from "@/types"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Scissors, Sparkles, Zap, Flame, Crown } from "lucide-react"
+import { Scissors, Sparkles, Zap, Flame, Crown, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useState } from "react"
 
 export default function ServicesPage() {
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null)
+
   const servicesByCategory = SERVICES.reduce(
     (acc, service) => {
       if (!acc[service.category]) {
@@ -24,18 +24,18 @@ export default function ServicesPage() {
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
       case "haircuts":
-        return <Scissors className="h-4 w-4" />
+        return <Scissors className="h-5 w-5" />
       case "beard services":
-        return <Flame className="h-4 w-4" />
+        return <Flame className="h-5 w-5" />
       case "shaves & gromming":
       case "shaves & grooming":
-        return <Zap className="h-4 w-4" />
+        return <Zap className="h-5 w-5" />
       case "facial & skin":
-        return <Sparkles className="h-4 w-4" />
+        return <Sparkles className="h-5 w-5" />
       case "packages":
-        return <Crown className="h-4 w-4" />
+        return <Crown className="h-5 w-5" />
       default:
-        return <Scissors className="h-4 w-4" />
+        return <Scissors className="h-5 w-5" />
     }
   }
 
@@ -53,78 +53,95 @@ export default function ServicesPage() {
               : category
   }
 
+  const toggleCategory = (category: string) => {
+    setExpandedCategory(expandedCategory === category ? null : category)
+  }
+
   const categories = Object.keys(servicesByCategory)
 
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container px-4 md:px-6">
-        <div className="mb-16 text-center space-y-4">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">Our Services</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Premium grooming experiences to elevate your style
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16 text-center space-y-4">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">Our Services</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Premium grooming experiences to elevate your style
+            </p>
+          </div>
 
-        <Tabs defaultValue={categories[0]} className="w-full">
-          <TabsList className="flex flex-wrap justify-center mb-12 h-auto bg-muted/50 p-1 rounded-full">
+          <div className="space-y-8">
             {categories.map((category) => (
-              <TabsTrigger
+              <div
                 key={category}
-                value={category}
-                className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                className={cn(
+                  "rounded-xl overflow-hidden transition-all duration-500 ease-in-out",
+                  "border-2 border-primary/10 hover:border-primary/20",
+                  expandedCategory === category ? "bg-primary/5" : "bg-background",
+                )}
               >
-                <span className="flex items-center gap-2">
-                  {getCategoryIcon(category)}
-                  {formatCategoryName(category)}
-                </span>
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
-          {categories.map((category) => (
-            <TabsContent key={category} value={category} className="mt-0 space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {servicesByCategory[category].map((service, index) => (
-                  <Card
-                    key={index}
+                {/* Category Header */}
+                <button
+                  onClick={() => toggleCategory(category)}
+                  className="w-full p-6 flex items-center justify-between"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      {getCategoryIcon(category)}
+                    </div>
+                    <div className="text-left">
+                      <h2 className="text-2xl font-bold">{formatCategoryName(category)}</h2>
+                      <p className="text-muted-foreground">{servicesByCategory[category].length} services available</p>
+                    </div>
+                  </div>
+                  <ChevronDown
                     className={cn(
-                      "overflow-hidden transition-all duration-300 hover:shadow-lg",
-                      "border-2 hover:border-primary/20",
-                      "group relative",
+                      "h-6 w-6 text-muted-foreground transition-transform duration-300",
+                      expandedCategory === category ? "transform rotate-180" : "",
                     )}
-                  >
-                    <div className="absolute top-0 left-0 w-full h-1 bg-primary/20 group-hover:bg-primary transition-colors duration-300"></div>
+                  />
+                </button>
 
-                    <CardHeader className="pb-3">
-                      <div className="flex justify-between items-center">
-                        <div className="flex items-center gap-2">
+                {/* Services */}
+                <div
+                  className={cn(
+                    "grid grid-cols-1 gap-4 px-6 transition-all duration-500 ease-in-out",
+                    expandedCategory === category ? "pb-6 max-h-[2000px]" : "max-h-0 overflow-hidden",
+                  )}
+                >
+                  {servicesByCategory[category].map((service, index) => (
+                    <div
+                      key={index}
+                      className={cn(
+                        "p-4 rounded-lg transition-all duration-300",
+                        "bg-card border border-border hover:border-primary/20",
+                        "flex flex-col md:flex-row md:items-center justify-between gap-4",
+                        "hover:shadow-md hover:shadow-primary/5",
+                      )}
+                    >
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
                           <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                             {getCategoryIcon(category)}
                           </div>
                           <h3 className="text-xl font-semibold">{service.type}</h3>
                         </div>
-                        <Badge variant="secondary" className="font-semibold text-lg">
-                          ${service.price}
-                        </Badge>
+                        <p className="text-muted-foreground">{service.description}</p>
                       </div>
-                    </CardHeader>
 
-                    <CardContent className="pt-2">
-                      <p className="text-muted-foreground">{service.description}</p>
-                    </CardContent>
-
-                    <CardFooter className="pt-2 pb-4">
-                      <Button className="w-full group-hover:bg-primary/90 transition-all duration-300" size="lg">
-                        Book Now
-                        <Sparkles className="ml-2 h-4 w-4 opacity-70" />
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                ))}
+                      <div className="flex items-center gap-4 self-end md:self-center">
+                        <div className="text-2xl font-bold text-primary">${service.price}</div>
+                        <Button size="sm" className="whitespace-nowrap">
+                          Book Now
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

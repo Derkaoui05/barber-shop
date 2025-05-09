@@ -64,6 +64,28 @@ export const SERVICES: Service[] = [
         price: 15,
         category: "Shaves & Gromming",
     },
+    // Packages
+    {
+        id: "ClassicCombo",
+        type: "Classic Combo",
+        description: "Haircut and beard trim, styled to perfection.",
+        price: 35,
+        category: "Packages",
+    },
+    {
+        id: "UltimateGroomingPackage",
+        type: "Ultimate Grooming Package",
+        description: "Haircut, hot towel shave, and facial treatment.",
+        price: 60,
+        category: "Packages",
+    },
+    {
+        id: "The Razor Brothers Experience",
+        type: "TheRazorBrothersExperience",
+        description: "Full-service experience - haircut, shave, and luxury beard treatment.",
+        price: 70,
+        category: "Packages",
+    },
 ];
 
 export const SERVICE_CATEGORIES = [

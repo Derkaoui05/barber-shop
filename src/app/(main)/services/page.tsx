@@ -91,7 +91,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="text-left">
                       <h2 className="text-2xl font-bold">{formatCategoryName(category)}</h2>
-                      <p className="text-muted-foreground">{servicesByCategory[category].length} services available</p>
+                      {/* <p className="text-muted-foreground">{servicesByCategory[category].length} services available</p> */}
                     </div>
                   </div>
                   <ChevronDown

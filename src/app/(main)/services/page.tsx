@@ -64,7 +64,7 @@ export default function ServicesPage() {
       <div className="container px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">Our Services</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-transparent  tracking-tight bg-clip-text bg-gradient-to-r from-primary/70 to-[#FFD700]/80">Our Services</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Premium grooming experiences to elevate your style
             </p>
@@ -131,9 +131,6 @@ export default function ServicesPage() {
 
                       <div className="flex items-center gap-4 self-end md:self-center">
                         <div className="text-2xl font-bold text-primary">${service.price}</div>
-                        <Button size="sm" className="whitespace-nowrap">
-                          Book Now
-                        </Button>
                       </div>
                     </div>
                   ))}

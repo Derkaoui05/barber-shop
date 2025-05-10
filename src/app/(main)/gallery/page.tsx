@@ -4,6 +4,7 @@ export default function GalleryPage() {
       <div className="container py-16">
         <h1 className="text-4xl font-bold mb-8">Our Gallery</h1>
         {/* Add your gallery grid here */}
+        gallery page
       </div>
     </main>
   );

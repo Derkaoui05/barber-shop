@@ -130,7 +130,7 @@ export default function ServicesPage() {
                       </div>
 
                       <div className="flex items-center gap-4 self-end md:self-center">
-                        <div className="text-2xl font-bold text-primary">${service.price}</div>
+                        <div className="text-2xl font-bold text-primary">${service.price}</div>   
                       </div>
                     </div>
                   ))}

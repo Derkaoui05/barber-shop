@@ -2,7 +2,6 @@
 
 import { SERVICES } from "@/config/services"
 import type { Service } from "@/types"
-import { Button } from "@/components/ui/button"
 import { Scissors, Sparkles, Zap, Flame, Crown, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"

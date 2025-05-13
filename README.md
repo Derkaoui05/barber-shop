@@ -48,7 +48,6 @@ The purpose of this project is to design and develop a professional, modern, and
 - Clean list/grid of services with:
     - Service name
     - Description
-    - Duration
     - Price
 - Optional categorization (e.g., Haircuts, Beards, Packages)
 

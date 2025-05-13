@@ -62,15 +62,12 @@ The purpose of this project is to design and develop a professional, modern, and
 ### 4.4 Gallery Page
 
 - Aesthetic gallery showing haircut styles, beard trims, etc.
-- Categories for filtering styles
 - Click to enlarge or swipe through images (mobile-friendly)
 
 ### 4.5 About Page
 
 - Personal story of the barber(s)
-- Shop’s mission, values, and years of experience
-- Optional certifications or press mentions
-
+- Shop’s mission, values
 ### 4.6 Contact Page
 
 - Embedded map showing shop location

@@ -5,6 +5,11 @@ import type { Service } from "@/types"
 import { Scissors, Sparkles, Zap, Flame, Crown, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Services | SharpLook Barber"
+};
 
 export default function ServicesPage() {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null)

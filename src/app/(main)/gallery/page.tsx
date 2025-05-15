@@ -1,6 +1,6 @@
-"use client";
 import { ParallaxScrollSecond } from "@/components/ui/parallax-scroll";
 import { Metadata } from "next";
+
 export const metadata: Metadata = {
   title: "gallery | SharpLook Barber"
 };

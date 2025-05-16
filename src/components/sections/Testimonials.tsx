@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 function Testimonials() {
@@ -12,7 +13,7 @@ function Testimonials() {
           <div className='testimonial__content grid'>
             <div className='testimonial__card'>
               <div className='testimonial__header'>
-                <img src='assets/img/testimonial-1.jpg' alt='' className='testimonial__img' />
+                <Image src='assets/img/testimonial-1.jpg' alt='kkkkkkk' width={200} height={200} className='testimonial__img' />
                 <div>
                   <h3 className='testimonial__name'>John Doe</h3>
                   <span className='testimonial__profession'>Frontend Developer</span>

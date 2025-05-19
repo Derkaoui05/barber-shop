@@ -26,7 +26,7 @@ The purpose of this project is to design and develop a professional, modern, and
 
 ### 🧑‍🤝‍🧑 3. Target Audience
 
-- Men aged 15–60 living locally
+- Men aged 18–60 living locally
 - Tourists or newcomers searching online for grooming services
 - Returning clients who prefer online scheduling
 - Busy professionals looking for quick access to services and hours

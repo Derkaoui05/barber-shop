@@ -88,10 +88,10 @@ The purpose of this project is to design and develop a professional, modern, and
 
 ---
 
-### 📈 6. Success Metrics
+<!-- ### 📈 6. Success Metrics
 
 - 25% increase in online bookings within 3 months
 - Average session duration greater than 2 minutes
 - Bounce rate below 40%
 - At least 50% of users return to the site within 30 days
-- Consistent 4.5+ star ratings in testimonials/reviews
+- Consistent 4.5+ star ratings in testimonials/reviews -->

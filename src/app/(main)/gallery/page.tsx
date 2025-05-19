@@ -10,7 +10,7 @@ export default function Gallery() {
     <div className="container relative bg-transparent py-12 md:py-16">
       <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Our Gallery</h1>
       <ParallaxScrollSecond 
-        className="h-[80vh]" 
+        // className="h-screen" 
         images={images} 
       />
     </div>

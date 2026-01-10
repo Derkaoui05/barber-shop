@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Gallery() {
   return (
-    <div className="container relative bg-transparent py-12 md:py-16">
+    <div className="container relative bg-transparent min-h-screen py-12 md:py-16">
       <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Our Gallery</h1>
       <ParallaxScrollSecond 
         // className="h-screen" 

@@ -27,7 +27,7 @@ export function Header() {
               className="text-sm font-medium transition-colors hover:text-primary relative group"
             >
               {item.title}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-h-0.5 bg-p0 w-0 primary transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>

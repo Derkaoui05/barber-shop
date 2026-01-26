@@ -22,7 +22,7 @@ export default function About() {
             <Button
               className="px-8 py-5 text-white transition-colors text-xl rounded-md bg-transparent hover:bg-primary border border-primary duration-500 cursor-pointer"
             >
-              About us
+              About Us
             </Button>
           </div>
 

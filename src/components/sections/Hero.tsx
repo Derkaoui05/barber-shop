@@ -3,7 +3,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen font-oswald w-full flex items-center justify-center">
+    <section className="relative  min-h-screen font-oswald w-full flex items-center justify-center">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0"

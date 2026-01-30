@@ -6,6 +6,10 @@ export const MAIN_NAV: NavItem[] = [
         href: "/",
     },
     {
+        title: "About",
+        href: "/about",
+    },
+    {
         title: "Services",
         href: "/services",
         description: "Explore our premium grooming services",
@@ -14,10 +18,6 @@ export const MAIN_NAV: NavItem[] = [
         title: "Gallery",
         href: "/gallery",
         description: "View our work and styling portfolio",
-    },
-    {
-        title: "About",
-        href: "/about",
     },
     {
         title: "Contact",

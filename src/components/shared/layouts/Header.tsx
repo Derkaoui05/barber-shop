@@ -1,15 +1,15 @@
-'use client';
-import Link from 'next/link';
-import { useState } from 'react';
-import { MAIN_NAV, MOBILE_NAV } from '@/config/navigation';
-import { Button } from '@/components/ui/button';
-import { Menu, X, Scissors } from 'lucide-react';
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { MAIN_NAV, MOBILE_NAV } from "@/config/navigation";
+import { Button } from "@/components/ui/button";
+import { Menu, X, Scissors } from "lucide-react";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b font-oswald bg-transparent ">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-10">
           <Link href="/" className="flex items-center gap-2 group">
@@ -24,7 +24,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-md  font-medium transition-colors hover:text-primary relative group"
+              className="text-md font-oswald font-medium transition-colors hover:text-primary relative group"
             >
               {item.title}
               <span className="absolute -bottom-1 left-h-0.5 bg-p0 w-0 primary transition-all duration-300 group-hover:w-full" />
@@ -68,7 +68,9 @@ export function Header() {
                   {item.title}
                 </span>
                 {item.description && (
-                  <span className="text-sm text-muted-foreground">{item.description}</span>
+                  <span className="text-sm text-muted-foreground">
+                    {item.description}
+                  </span>
                 )}
               </Link>
             ))}

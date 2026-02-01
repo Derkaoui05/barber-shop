@@ -1,26 +1,26 @@
-"use client"
-import { useState } from "react";
+'use client';
+import { useState } from 'react';
 
 const slides = [
   {
-    img: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1920&h=1080&fit=crop",
-    text: ["BETWEEN SHADOW", "AND LIGHT"],
+    img: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1920&h=1080&fit=crop',
+    text: ['BETWEEN SHADOW', 'AND LIGHT'],
   },
   {
-    img: "https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&h=1080&fit=crop",
-    text: ["SILENCE SPEAKS", "THROUGH FORM"],
+    img: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&h=1080&fit=crop',
+    text: ['SILENCE SPEAKS', 'THROUGH FORM'],
   },
   {
-    img: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920&h=1080&fit=crop",
-    text: ["ESSENCE BEYOND", "PERCEPTION"],
+    img: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920&h=1080&fit=crop',
+    text: ['ESSENCE BEYOND', 'PERCEPTION'],
   },
   {
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop",
-    text: ["TRUTH IN", "EMPTINESS"],
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop',
+    text: ['TRUTH IN', 'EMPTINESS'],
   },
   {
-    img: "https://images.unsplash.com/photo-1518976024611-28bf4b48222e?w=1920&h=1080&fit=crop",
-    text: ["SURRENDER TO", "THE VOID"],
+    img: 'https://images.unsplash.com/photo-1518976024611-28bf4b48222e?w=1920&h=1080&fit=crop',
+    text: ['SURRENDER TO', 'THE VOID'],
   },
 ];
 
@@ -28,8 +28,7 @@ export default function Component() {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
-  const prevSlide = () =>
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
@@ -38,14 +37,11 @@ export default function Component() {
         <div
           key={i}
           className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 ${
-            i === current ? "opacity-100 z-10" : "opacity-0 z-0"
+            i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
           style={{ backgroundImage: `url(${slide.img})` }}
         >
-          {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/40" />
-          
-          {/* Text overlay */}
           <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
             {slide.text.map((t, j) => (
               <span
